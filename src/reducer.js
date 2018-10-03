@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case actions.searchData:
       return { ...state, searchData: action.value };
     case actions.searchValue:
-      return { ...state, searchValue: action.value };
+      return { ...state, searchValue: action.value, searchData: null, page: 1 };
     case actions.page:
       return { ...state, page: action.value };
     default:

@@ -25,7 +25,6 @@ export class PureApp extends Component {
   }
 
   render() {
-    const input = (<input type="text" name="q" onChange={ (e) => this.props.setSearchValue(e.target.value) } />);
     return (
       <div className="App">
         <header className="App-header">
@@ -36,7 +35,7 @@ export class PureApp extends Component {
           this.onSubmit(e)
         }}>
           <p className="App-intro">
-            { input }
+            <input type="text" onChange={ (e) => this.props.setSearchValue(e.target.value) } />
             <input type="submit" value="Search" />
           </p>
           { this.renderResultCount() }

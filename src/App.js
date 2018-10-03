@@ -79,7 +79,7 @@ export class PureApp extends Component {
   renderPaginationButtons() {
     return <div className={'pagination'}>
       { this.props.searchData && this.props.page > 1 ? <input type="button" key="previous" value="Previous" onClick={() => this.goPrevious() }/> : null }
-      { this.props.searchData ? <input type="button" key="next" value="Next" onClick={() => this.goNext()}/> : null }
+      { this.props.searchData && this.props.page < Math.floor(this.props.searchData.total_count / resultsPerPage) ? <input type="button" key="next" value="Next" onClick={() => this.goNext()}/> : null }
     </div>;
   }
 

@@ -85,7 +85,8 @@ export class PureApp extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    updateSearch(this.props.searchValue, this.props.callbackName, this.props.page);
+    this.props.setPage(1);
+    updateSearch(this.props.searchValue, this.props.callbackName, 1);
   }
 
   goNext() {
